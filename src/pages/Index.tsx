@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, ArrowUpRight } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
-import { supabase } from "@/lib/supabaseClient";
+import { supabase } from "@/integrations/supabase/client";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -15,9 +15,7 @@ const Index = () => {
     try {
       const { error } = await supabase
         .from('waitlist')
-        .insert([
-          { email: email }
-        ]);
+        .insert([{ email }]);
 
       if (error) throw error;
 
@@ -26,11 +24,11 @@ const Index = () => {
         description: "You've been added to our waitlist. We'll be in touch soon!",
       });
       setEmail("");
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error:', error);
       toast({
         title: "Error",
-        description: "There was a problem adding you to the waitlist. Please try again.",
+        description: error.message || "There was a problem adding you to the waitlist. Please try again.",
         variant: "destructive",
       });
     }
