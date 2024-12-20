@@ -2,21 +2,38 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, ArrowUpRight } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
+import { supabase } from "@/lib/supabaseClient";
 
 const Index = () => {
   const [email, setEmail] = useState("");
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
     
-    // Here we'd typically send this to an API
-    toast({
-      title: "Success!",
-      description: "You've been added to our waitlist. We'll be in touch soon!",
-    });
-    setEmail("");
+    try {
+      const { error } = await supabase
+        .from('waitlist')
+        .insert([
+          { email: email }
+        ]);
+
+      if (error) throw error;
+
+      toast({
+        title: "Success!",
+        description: "You've been added to our waitlist. We'll be in touch soon!",
+      });
+      setEmail("");
+    } catch (error) {
+      console.error('Error:', error);
+      toast({
+        title: "Error",
+        description: "There was a problem adding you to the waitlist. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   const fadeUp = {
