@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, ArrowUpRight } from "lucide-react";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 
 const Index = () => {
@@ -14,7 +14,7 @@ const Index = () => {
     
     try {
       const { error } = await supabase
-        .from('waitlist')
+        .from("waitlist")
         .insert([{ email }]);
 
       if (error) throw error;
