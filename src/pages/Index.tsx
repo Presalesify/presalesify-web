@@ -13,9 +13,20 @@ const Index = () => {
     if (!email) return;
     
     try {
+      // Get browser location
+      const browserLocation = window.location.toString();
+      
+      // Get IP address using ipify API
+      const ipResponse = await fetch('https://api.ipify.org?format=json');
+      const ipData = await ipResponse.json();
+      
       const { error } = await supabase
         .from("waitlist")
-        .insert([{ email }]);
+        .insert([{ 
+          email,
+          browser_location: browserLocation,
+          ip_address: ipData.ip
+        }]);
 
       if (error) throw error;
 

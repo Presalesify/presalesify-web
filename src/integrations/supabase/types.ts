@@ -11,19 +11,25 @@ export type Database = {
     Tables: {
       waitlist: {
         Row: {
+          browser_location: string | null
           created_at: string
           email: string
           id: string
+          ip_address: string | null
         }
         Insert: {
+          browser_location?: string | null
           created_at?: string
           email: string
           id?: string
+          ip_address?: string | null
         }
         Update: {
+          browser_location?: string | null
           created_at?: string
           email?: string
           id?: string
+          ip_address?: string | null
         }
         Relationships: []
       }
