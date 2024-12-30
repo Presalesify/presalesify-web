@@ -1,27 +1,44 @@
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { Github, Slack, ExternalLink, CalendarDays, Building2 } from "lucide-react";
 
 const Integrations = () => {
   const integrations = [
     {
       name: "Salesforce",
       description: "Sync your presales data with Salesforce CRM",
-      status: "Coming soon",
+      icon: Building2,
     },
     {
       name: "HubSpot",
       description: "Connect your presales workflow with HubSpot",
       status: "Coming soon",
+      icon: Building2,
     },
     {
       name: "Slack",
       description: "Get notifications and updates directly in Slack",
-      status: "Coming soon",
+      icon: Slack,
     },
     {
       name: "Microsoft Teams",
       description: "Collaborate with your team in Microsoft Teams",
+      icon: Building2,
+    },
+    {
+      name: "GitHub",
+      description: "Integrate with your development workflow",
+      icon: Github,
+    },
+    {
+      name: "Apollo.io",
+      description: "Connect with your sales intelligence platform",
       status: "Coming soon",
+      icon: Building2,
+    },
+    {
+      name: "Calendly",
+      description: "Schedule demos and meetings seamlessly",
+      icon: CalendarDays,
     }
   ];
 
@@ -51,17 +68,22 @@ const Integrations = () => {
                 className="p-6 transition-all bg-white border rounded-xl hover:shadow-lg"
               >
                 <div className="flex items-start justify-between">
-                  <div>
-                    <h3 className="text-xl font-semibold text-secondary">
-                      {integration.name}
-                    </h3>
-                    <p className="mt-2 text-gray-600">{integration.description}</p>
+                  <div className="flex items-start gap-3">
+                    <integration.icon className="w-6 h-6 text-primary" />
+                    <div>
+                      <h3 className="text-xl font-semibold text-secondary">
+                        {integration.name}
+                      </h3>
+                      <p className="mt-2 text-gray-600">{integration.description}</p>
+                    </div>
                   </div>
                   <ExternalLink className="w-5 h-5 text-gray-400" />
                 </div>
-                <span className="inline-block px-3 py-1 mt-4 text-sm font-medium text-primary bg-primary/10 rounded-full">
-                  {integration.status}
-                </span>
+                {integration.status && (
+                  <span className="inline-block px-3 py-1 mt-4 text-sm font-medium text-primary bg-primary/10 rounded-full">
+                    {integration.status}
+                  </span>
+                )}
               </motion.div>
             ))}
           </div>
