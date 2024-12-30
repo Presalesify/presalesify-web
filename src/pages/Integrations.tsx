@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
-import { Github, Slack, ExternalLink, CalendarDays, Building2 } from "lucide-react";
+import { Github, Slack, ExternalLink, CalendarDays } from "lucide-react";
 import { SalesforceIcon } from "@/components/icons/SalesforceIcon";
 import { HubspotIcon } from "@/components/icons/HubspotIcon";
 import { ApolloIcon } from "@/components/icons/ApolloIcon";
+import { TeamsIcon } from "@/components/icons/TeamsIcon";
 
 const Integrations = () => {
   const integrations = [
@@ -25,7 +26,7 @@ const Integrations = () => {
     {
       name: "Microsoft Teams",
       description: "Collaborate with your team in Microsoft Teams",
-      icon: Building2,
+      icon: TeamsIcon,
     },
     {
       name: "GitHub",
