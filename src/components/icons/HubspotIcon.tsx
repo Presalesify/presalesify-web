@@ -14,8 +14,9 @@ export const HubspotIcon: LucideIcon = forwardRef((props, ref) => (
     {...props}
   >
     <path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z" />
-    <path d="M12 16V8" />
-    <path d="M16 12H8" />
+    <path d="M7 12h4m2 0h4" />
+    <path d="M12 7v10" />
+    <circle cx="12" cy="12" r="3" />
   </svg>
 ));
 
