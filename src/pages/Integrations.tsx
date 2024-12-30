@@ -14,7 +14,6 @@ const Integrations = () => {
     {
       name: "HubSpot",
       description: "Connect your presales workflow with HubSpot",
-      status: "Coming soon",
       icon: HubspotIcon,
     },
     {
@@ -35,7 +34,6 @@ const Integrations = () => {
     {
       name: "Apollo.io",
       description: "Connect with your sales intelligence platform",
-      status: "Coming soon",
       icon: ApolloIcon,
     },
     {
@@ -82,11 +80,6 @@ const Integrations = () => {
                   </div>
                   <ExternalLink className="w-5 h-5 text-gray-400" />
                 </div>
-                {integration.status && (
-                  <span className="inline-block px-3 py-1 mt-4 text-sm font-medium text-primary bg-primary/10 rounded-full">
-                    {integration.status}
-                  </span>
-                )}
               </motion.div>
             ))}
           </div>
