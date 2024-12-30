@@ -13,12 +13,16 @@ const Index = () => {
     if (!email) return;
     
     try {
-      // Get browser location
-      const browserLocation = window.location.toString();
-      
       // Get IP address using ipify API
       const ipResponse = await fetch('https://api.ipify.org?format=json');
       const ipData = await ipResponse.json();
+      
+      // Get location data using IP address
+      const locationResponse = await fetch(`https://ipapi.co/${ipData.ip}/json/`);
+      const locationData = await locationResponse.json();
+      
+      // Format location string
+      const browserLocation = `${locationData.city}, ${locationData.region}, ${locationData.country_name}`;
       
       const { error } = await supabase
         .from("waitlist")
