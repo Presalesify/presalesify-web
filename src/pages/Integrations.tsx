@@ -1,18 +1,21 @@
 import { motion } from "framer-motion";
 import { Github, Slack, ExternalLink, CalendarDays, Building2 } from "lucide-react";
+import { SalesforceIcon } from "@/components/icons/SalesforceIcon";
+import { HubspotIcon } from "@/components/icons/HubspotIcon";
+import { ApolloIcon } from "@/components/icons/ApolloIcon";
 
 const Integrations = () => {
   const integrations = [
     {
       name: "Salesforce",
       description: "Sync your presales data with Salesforce CRM",
-      icon: Building2,
+      icon: SalesforceIcon,
     },
     {
       name: "HubSpot",
       description: "Connect your presales workflow with HubSpot",
       status: "Coming soon",
-      icon: Building2,
+      icon: HubspotIcon,
     },
     {
       name: "Slack",
@@ -33,7 +36,7 @@ const Integrations = () => {
       name: "Apollo.io",
       description: "Connect with your sales intelligence platform",
       status: "Coming soon",
-      icon: Building2,
+      icon: ApolloIcon,
     },
     {
       name: "Calendly",
