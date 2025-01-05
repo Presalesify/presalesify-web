@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, ArrowUpRight } from "lucide-react";
+import { ArrowRight, CheckCircle2, ArrowUpRight, Slice, Zap } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -65,15 +65,15 @@ const Index = () => {
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto"
         >
-          <span className="px-4 py-2 text-sm font-medium text-primary-dark bg-primary/10 rounded-full">
-            Coming Soon
+          <span className="px-4 py-2 text-sm font-medium text-primary-dark bg-primary/10 rounded-full inline-flex items-center gap-2">
+            <Slice className="w-4 h-4 text-primary" /> Coming Soon
           </span>
           <h1 className="mt-8 text-5xl font-bold tracking-tight text-secondary md:text-6xl">
             Bridge the gap between
             <span className="text-primary"> presales and sales</span>
           </h1>
           <p className="mt-6 text-xl text-gray-600">
-            Streamline your technical sales process and close deals faster with our intelligent presales automation platform.
+            Streamline your technical sales process with ProspectAI™ and close deals faster with our intelligent presales automation platform.
           </p>
 
           <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center gap-4 mt-12 sm:flex-row">
@@ -108,10 +108,10 @@ const Index = () => {
             className="max-w-3xl mx-auto text-center"
           >
             <h2 className="text-3xl font-bold text-secondary md:text-4xl">
-              Revolutionizing Technical Sales
+              Revolutionizing Technical Sales with ProspectAI™
             </h2>
             <p className="mt-4 text-xl text-gray-600">
-              Transform your presales process with powerful automation and insights
+              Transform your presales process with AI-powered automation and insights
             </p>
           </motion.div>
 
@@ -174,18 +174,18 @@ const Index = () => {
 
 const features = [
   {
-    title: "Automated Technical Discovery",
-    description: "Streamline the discovery process with AI-powered questionnaires and requirement gathering.",
+    title: "AI-Powered Technical Discovery",
+    description: "Let ProspectAI™ streamline your discovery process with intelligent questionnaires and automated requirement gathering.",
     icon: <CheckCircle2 className="w-6 h-6" />,
   },
   {
-    title: "Smart Deal Qualification",
-    description: "Qualify opportunities faster with intelligent scoring and predictive analytics.",
-    icon: <CheckCircle2 className="w-6 h-6" />,
+    title: "Juice Score™ Deal Qualification",
+    description: "Qualify opportunities faster with our proprietary Juice Score™ powered by predictive analytics.",
+    icon: <Zap className="w-6 h-6" />,
   },
   {
     title: "Seamless Collaboration",
-    description: "Bridge the gap between presales and sales teams with real-time communication tools.",
+    description: "Bridge the gap between presales and sales teams with real-time insights and communication tools.",
     icon: <CheckCircle2 className="w-6 h-6" />,
   },
 ];
