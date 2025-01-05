@@ -78,7 +78,7 @@ const Index = () => {
             <span className="text-primary"> presales and sales</span>
           </h1>
           <p className="mt-6 text-xl text-gray-600">
-            Streamline your technical sales process with ProspectAI™ and close deals faster with our intelligent presales automation platform.
+            Streamline your technical sales process with ProspectAI and close deals faster with our intelligent presales automation platform.
           </p>
 
           <form onSubmit={handleSubmit} className="flex flex-col items-center justify-center gap-4 mt-12 sm:flex-row">
@@ -180,12 +180,12 @@ const Index = () => {
 const features = [
   {
     title: "AI-Powered Technical Discovery",
-    description: "Let ProspectAI™ streamline your discovery process with intelligent questionnaires and automated requirement gathering.",
+    description: "Let ProspectAI streamline your discovery process with intelligent questionnaires and automated requirement gathering.",
     icon: <CheckCircle2 className="w-6 h-6" />,
   },
   {
     title: "Juice Score™ Deal Qualification",
-    description: "Qualify opportunities faster with our proprietary Juice Score™ powered by predictive analytics.",
+    description: "Qualify opportunities faster with our proprietary Juice Score powered by predictive analytics.",
     icon: <Zap className="w-6 h-6" />,
   },
   {
