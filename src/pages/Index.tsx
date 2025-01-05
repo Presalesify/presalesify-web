@@ -113,7 +113,7 @@ const Index = () => {
             className="max-w-3xl mx-auto text-center"
           >
             <h2 className="text-3xl font-bold text-secondary md:text-4xl">
-              Revolutionizing Technical Sales with ProspectAI™
+              Revolutionizing Technical Sales with ProspectAI
             </h2>
             <p className="mt-4 text-xl text-gray-600">
               Transform your presales process with AI-powered automation and insights
@@ -184,7 +184,7 @@ const features = [
     icon: <CheckCircle2 className="w-6 h-6" />,
   },
   {
-    title: "Juice Score™ Deal Qualification",
+    title: "Juice Score Deal Qualification",
     description: "Qualify opportunities faster with our proprietary Juice Score powered by predictive analytics.",
     icon: <Zap className="w-6 h-6" />,
   },
