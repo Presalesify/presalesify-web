@@ -66,8 +66,8 @@ const Index = () => {
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto relative"
         >
-          <div className="absolute -top-24 right-0 md:right-20 animate-float opacity-90">
-            <OrangeSliceIcon size={180} />
+          <div className="absolute -top-12 left-0 md:-left-24 animate-float opacity-90">
+            <OrangeSliceIcon size={120} />
           </div>
           
           <span className="px-4 py-2 text-sm font-medium text-primary-dark bg-primary/10 rounded-full inline-flex items-center gap-2">

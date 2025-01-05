@@ -11,40 +11,65 @@ const OrangeSliceIcon = ({ className = "", size = 120 }: { className?: string; s
       {/* Orange circle background */}
       <circle cx="60" cy="60" r="55" fill="#F97316" />
       
-      {/* Inner orange flesh */}
-      <circle cx="60" cy="60" r="50" fill="#FEC6A1" />
+      {/* Inner orange flesh with gradient */}
+      <circle cx="60" cy="60" r="50" fill="#FEC6A1">
+        <animate
+          attributeName="opacity"
+          values="0.8;1;0.8"
+          dur="3s"
+          repeatCount="indefinite"
+        />
+      </circle>
       
-      {/* White segments */}
-      <path
-        d="M60 60 L60 10 A50 50 0 0 1 103.3 35 Z"
-        fill="white"
-        fillOpacity="0.95"
-      />
-      <path
-        d="M60 60 L103.3 35 A50 50 0 0 1 103.3 85 Z"
-        fill="white"
-        fillOpacity="0.95"
-      />
-      <path
-        d="M60 60 L103.3 85 A50 50 0 0 1 60 110 Z"
-        fill="white"
-        fillOpacity="0.95"
-      />
-      <path
-        d="M60 60 L60 110 A50 50 0 0 1 16.7 85 Z"
-        fill="white"
-        fillOpacity="0.95"
-      />
-      <path
-        d="M60 60 L16.7 85 A50 50 0 0 1 16.7 35 Z"
-        fill="white"
-        fillOpacity="0.95"
-      />
-      <path
-        d="M60 60 L16.7 35 A50 50 0 0 1 60 10 Z"
-        fill="white"
-        fillOpacity="0.95"
-      />
+      {/* Orange segments with better visibility */}
+      <g opacity="0.9">
+        <path
+          d="M60 60 L60 10 A50 50 0 0 1 103.3 35 Z"
+          fill="white"
+          stroke="#F97316"
+          strokeWidth="0.5"
+        />
+        <path
+          d="M60 60 L103.3 35 A50 50 0 0 1 103.3 85 Z"
+          fill="white"
+          stroke="#F97316"
+          strokeWidth="0.5"
+        />
+        <path
+          d="M60 60 L103.3 85 A50 50 0 0 1 60 110 Z"
+          fill="white"
+          stroke="#F97316"
+          strokeWidth="0.5"
+        />
+        <path
+          d="M60 60 L60 110 A50 50 0 0 1 16.7 85 Z"
+          fill="white"
+          stroke="#F97316"
+          strokeWidth="0.5"
+        />
+        <path
+          d="M60 60 L16.7 85 A50 50 0 0 1 16.7 35 Z"
+          fill="white"
+          stroke="#F97316"
+          strokeWidth="0.5"
+        />
+        <path
+          d="M60 60 L16.7 35 A50 50 0 0 1 60 10 Z"
+          fill="white"
+          stroke="#F97316"
+          strokeWidth="0.5"
+        />
+      </g>
+      
+      {/* Segment lines for better definition */}
+      <g opacity="0.3">
+        <path d="M60 60 L60 10" stroke="#F97316" strokeWidth="0.5" />
+        <path d="M60 60 L103.3 35" stroke="#F97316" strokeWidth="0.5" />
+        <path d="M60 60 L103.3 85" stroke="#F97316" strokeWidth="0.5" />
+        <path d="M60 60 L60 110" stroke="#F97316" strokeWidth="0.5" />
+        <path d="M60 60 L16.7 85" stroke="#F97316" strokeWidth="0.5" />
+        <path d="M60 60 L16.7 35" stroke="#F97316" strokeWidth="0.5" />
+      </g>
       
       {/* Leaves */}
       <path
