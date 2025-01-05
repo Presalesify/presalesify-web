@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, ArrowUpRight, Slice, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, ArrowUpRight, Zap } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import OrangeSliceIcon from "@/components/icons/OrangeSliceIcon";
 
 const Index = () => {
   const [email, setEmail] = useState("");
@@ -63,10 +64,14 @@ const Index = () => {
           animate="visible"
           variants={fadeUp}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto"
+          className="max-w-4xl mx-auto relative"
         >
+          <div className="absolute -top-24 right-0 md:right-20 animate-float opacity-90">
+            <OrangeSliceIcon size={180} />
+          </div>
+          
           <span className="px-4 py-2 text-sm font-medium text-primary-dark bg-primary/10 rounded-full inline-flex items-center gap-2">
-            <Slice className="w-4 h-4 text-primary" /> Coming Soon
+            Coming Soon
           </span>
           <h1 className="mt-8 text-5xl font-bold tracking-tight text-secondary md:text-6xl">
             Bridge the gap between
